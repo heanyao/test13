@@ -8,6 +8,7 @@
     <!--图片轮播样式-->
     <link rel="stylesheet" href="__INDEX__/style/scroll.css"/>
 </head>
+<body>
 <!--头部-->
 {include file="public/header"}
 
@@ -71,7 +72,7 @@
                 </div>
             </div>
         </div>
-        <div class="hot_new_box">
+        <!-- <div class="hot_new_box">
             <div class="hot_new_date">
                 <svg version="1.1" id="L7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
  <path fill="#E75755" d="M31.6,3.5C5.9,13.6-6.6,42.7,3.5,68.4c10.1,25.7,39.2,38.3,64.9,28.1l-3.1-7.9c-21.3,8.4-45.4-2-53.8-23.3
@@ -133,7 +134,11 @@
                 </div>
 
             </div>
-        </div>
+        </div> -->
+        <div style="vertical-align: top;
+background-color: #ffffff;
+display: inline-block;
+margin: 0 20px;"><a href="http://fin110.com/"><img src="__INDEX__/images/longzhimeng.jpg" alt="龙之梦"/></a></div>
         <div class="other_msg_box">
             <a href="#" class="other_btn_l complain_btn">
                 <img src="__INDEX__/images/complaintIcon.png" alt="图标"/>
@@ -143,7 +148,7 @@
                 <img src="__INDEX__/images/askIcon.png" alt="图标"/>我要咨询
             </a>
 
-            <div class="complain_number">
+            <!-- <div class="complain_number">
                 <div class="today_complain">
                     <div class="complain_title_l">今日投诉</div>
                     <div class="complain_number_today counter">
@@ -156,7 +161,12 @@
                         2222222
                     </div>
                 </div>
-            </div>
+            </div> -->
+			<div style="width: 260px;
+height: 110px;
+background: linear-gradient(270deg, rgba(51, 49, 59, 1) 0%, rgba(0, 0, 0, 1) 100%);
+border-radius: 4px;
+text-align: center;"><a href="http://fin110.com/"><img src="__INDEX__/images/dongzhan.jpg" alt="东站"/></a></div>
         </div>
     </div>
 
@@ -363,6 +373,40 @@
                     </li>
                 </ul>
             </div>
+<style>
+.q_jianguan_lt {
+	display: block;
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    left: 0;
+    top: 0;
+    width: 78px;
+    height: 22px;
+    line-height: 22px;
+    z-index: 2;
+}
+.q_jg_dsj {
+	display: block;
+	position: relative;
+	left: 0;
+	width: 0;
+	height: 6px;
+	border-left: 39px solid transparent;
+	z-index: 10;
+}
+.q_jg_dsj2 {
+	display: block;
+	position: relative;
+	left: 39px;
+	z-index: 10;
+	top: -12px;
+	width: 0px;
+	height: 6px;
+	border-right: 39px solid transparent;
+}
+</style>
             <div class="right_con_list">
                 <!--119排行-->
                 {volist name="getrank" id="vo" key="k" }
@@ -383,11 +427,18 @@
                             {$vo.name_en}{$vo.name_cn}
                         </div>
                         <div class="item_public_praise">
-                            <div>
+                            <div style="float: left;">
                                 <div class="public_praise_title">口碑评分</div>
                                 <div class="public_praise_number">{$vo.avg_rate/10}</div>
                             </div>
-                            <img src="__INDEX__/images/rightItemStauts.png" alt="状态" class="right_item_status"/>
+                            <!-- <img src="__INDEX__/images/rightItemStauts.png" alt="状态" class="right_item_status"/> -->
+								<!-- <span class="item_status" style="float: left;color: black;display: block;height: 22px;margin-left:10px;font-size: 12px;">{$vo.status}</span> -->
+
+								<span class="item_status" style="float: left;height: 28px;margin-left:10px;">
+									<span class="q_jianguan_lt" style="background: rgb(12, 181, 130) none repeat scroll 0% 0%;">{$vo.status}</span>
+									<span class="q_jg_dsj" style="border-top: 6px solid rgb(12, 181, 130);"></span>
+									<span class="q_jg_dsj2" style="border-top: 6px solid rgb(12, 181, 130);"></span>
+								</span>
                         </div>
                         <div class="right_item_other_msg">
                             <div class="item_year_long">
@@ -417,11 +468,18 @@
                             {$vo.name_en}{$vo.name_cn}
                         </div>
                         <div class="item_public_praise">
-                            <div>
+                            <div style="float: left;">
                                 <div class="public_praise_title">口碑评分</div>
                                 <div class="public_praise_number">{$vo.avg_rate/10}</div>
                             </div>
-                            <img src="__INDEX__/images/rightItemStauts.png" alt="状态" class="right_item_status"/>
+                            <!-- <img src="__INDEX__/images/rightItemStauts.png" alt="状态" class="right_item_status"/> -->
+								<!-- <span class="item_status" style="float: left;color: black;display: block;height: 22px;margin-left:10px;font-size: 12px;">{$vo.status}</span> -->
+
+								<span class="item_status" style="float: left;height: 28px;margin-left:10px;">
+									<span class="q_jianguan_lt" style="background: rgb(12, 181, 130) none repeat scroll 0% 0%;">{$vo.status}</span>
+									<span class="q_jg_dsj" style="border-top: 6px solid rgb(12, 181, 130);"></span>
+									<span class="q_jg_dsj2" style="border-top: 6px solid rgb(12, 181, 130);"></span>
+								</span>
                         </div>
                         <div class="right_item_other_msg">
                             <div class="item_year_long">
@@ -442,11 +500,18 @@
                             3中国平安-PINGAN
                         </div>
                         <div class="item_public_praise">
-                            <div>
+                            <div style="float: left;">
                                 <div class="public_praise_title">口碑评分</div>
                                 <div class="public_praise_number">9.0</div>
                             </div>
-                            <img src="__INDEX__/images/rightItemStauts.png" alt="状态" class="right_item_status"/>
+                            <!-- <img src="__INDEX__/images/rightItemStauts.png" alt="状态" class="right_item_status"/> -->
+								<!-- <span class="item_status" style="float: left;color: black;display: block;height: 22px;margin-left:10px;font-size: 12px;">{$vo.status}</span> -->
+
+								<span class="item_status" style="float: left;height: 28px;margin-left:10px;">
+									<span class="q_jianguan_lt" style="background: rgb(12, 181, 130) none repeat scroll 0% 0%;">{$vo.status}</span>
+									<span class="q_jg_dsj" style="border-top: 6px solid rgb(12, 181, 130);"></span>
+									<span class="q_jg_dsj2" style="border-top: 6px solid rgb(12, 181, 130);"></span>
+								</span>
                         </div>
                         <div class="right_item_other_msg">
                             <div class="item_year_long">
@@ -465,11 +530,18 @@
                             3中国平安-PINGAN
                         </div>
                         <div class="item_public_praise">
-                            <div>
+                            <div style="float: left;">
                                 <div class="public_praise_title">口碑评分</div>
                                 <div class="public_praise_number">9.0</div>
                             </div>
-                            <img src="__INDEX__/images/rightItemStauts.png" alt="状态" class="right_item_status"/>
+                            <!-- <img src="__INDEX__/images/rightItemStauts.png" alt="状态" class="right_item_status"/> -->
+								<!-- <span class="item_status" style="float: left;color: black;display: block;height: 22px;margin-left:10px;font-size: 12px;">{$vo.status}</span> -->
+
+								<span class="item_status" style="float: left;height: 28px;margin-left:10px;">
+									<span class="q_jianguan_lt" style="background: rgb(12, 181, 130) none repeat scroll 0% 0%;">{$vo.status}</span>
+									<span class="q_jg_dsj" style="border-top: 6px solid rgb(12, 181, 130);"></span>
+									<span class="q_jg_dsj2" style="border-top: 6px solid rgb(12, 181, 130);"></span>
+								</span>
                         </div>
                         <div class="right_item_other_msg">
                             <div class="item_year_long">
@@ -489,11 +561,18 @@
                             4中国平安-PINGAN
                         </div>
                         <div class="item_public_praise">
-                            <div>
+                            <div style="float: left;">
                                 <div class="public_praise_title">口碑评分</div>
                                 <div class="public_praise_number">9.0</div>
                             </div>
-                            <img src="__INDEX__/images/rightItemStauts.png" alt="状态" class="right_item_status"/>
+                            <!-- <img src="__INDEX__/images/rightItemStauts.png" alt="状态" class="right_item_status"/> -->
+								<!-- <span class="item_status" style="float: left;color: black;display: block;height: 22px;margin-left:10px;font-size: 12px;">{$vo.status}</span> -->
+
+								<span class="item_status" style="float: left;height: 28px;margin-left:10px;">
+									<span class="q_jianguan_lt" style="background: rgb(12, 181, 130) none repeat scroll 0% 0%;">{$vo.status}</span>
+									<span class="q_jg_dsj" style="border-top: 6px solid rgb(12, 181, 130);"></span>
+									<span class="q_jg_dsj2" style="border-top: 6px solid rgb(12, 181, 130);"></span>
+								</span>
                         </div>
                         <div class="right_item_other_msg">
                             <div class="item_year_long">
@@ -512,11 +591,18 @@
                             4中国平安-PINGAN
                         </div>
                         <div class="item_public_praise">
-                            <div>
+                            <div style="float: left;">
                                 <div class="public_praise_title">口碑评分</div>
                                 <div class="public_praise_number">9.0</div>
                             </div>
-                            <img src="__INDEX__/images/rightItemStauts.png" alt="状态" class="right_item_status"/>
+                            <!-- <img src="__INDEX__/images/rightItemStauts.png" alt="状态" class="right_item_status"/> -->
+								<!-- <span class="item_status" style="float: left;color: black;display: block;height: 22px;margin-left:10px;font-size: 12px;">{$vo.status}</span> -->
+
+								<span class="item_status" style="float: left;height: 28px;margin-left:10px;">
+									<span class="q_jianguan_lt" style="background: rgb(12, 181, 130) none repeat scroll 0% 0%;">{$vo.status}</span>
+									<span class="q_jg_dsj" style="border-top: 6px solid rgb(12, 181, 130);"></span>
+									<span class="q_jg_dsj2" style="border-top: 6px solid rgb(12, 181, 130);"></span>
+								</span>
                         </div>
                         <div class="right_item_other_msg">
                             <div class="item_year_long">

@@ -450,6 +450,8 @@ body {
     font-weight: 500;
     color: #333333;
     line-height: 24px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .item_public_praise {

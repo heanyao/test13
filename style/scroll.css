@@ -19,8 +19,8 @@
 svg {
     position: absolute;
     z-index: 1;
-    width: 620px;
-    height: 340px;
+    /* width: 620px; */
+    /* height: 340px; */
     cursor: pointer;
 }
 

@@ -154,9 +154,11 @@
     background-size: 100%;
     background-repeat: no-repeat;
 }
-
+.user_login_l {
+	float: right;
+}
 .login_status_2 {
-    display: none;
+    display: block;
 }
 
 .login_status_2 a {
@@ -230,7 +232,7 @@
 .search_input_con {
     display: flex;
     align-items: center;
-    margin-left: 101px;
+    margin-left: 50px;
 }
 
 .search_key_con {

@@ -8,6 +8,7 @@ class Myform extends Common
 
     public function _initialize()
     {
+		parent::_initialize();
        $this->obj = Model('Myform');
 
     }
