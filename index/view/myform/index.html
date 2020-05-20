@@ -91,14 +91,17 @@
 							<img id="addupload" src="__INDEX__/images/upload.jpg" alt="">
 						</div>
 					</div>
-					<div style="margin-left: 88px;">
+					<div class="contact_option">
+						<div style="width:87px;"></div>
 						<input type="checkbox" name="is_hidefile" id="input_checkbox_one">
-						<label for="input_checkbox_one">隐藏附件</label>
+						<label for="input_checkbox_one"></label>
+						<div style="position: relative;top: -2px;">隐藏附件</div>
 					</div>
 					<div class="contact_option">
 						<span>联系方式</span>
 						<input type="checkbox" checked ='checked' name="contact_allow" id="input_checkbox_two">
-						<label for="input_checkbox_two">允许商家通过本平台预留的手机号码联系您（强烈建议勾选，仅限本平台及被投诉商家可见)</label>
+						<label for="input_checkbox_two"></label>
+						<div style="position: relative;top: -2px;">允许商家通过本平台预留的手机号码联系您（强烈建议勾选，仅限本平台及被投诉商家可见)</div>
 					</div>
 				</div>
 				<button id="submit_btn">提交</button>
@@ -128,7 +131,7 @@
 				{volist name="blacklist" id="vo" key="k" }
 					<li>
 						<img src="{$vo.logo_url}" alt="">
-						<span style="width: 75%;display: block;overflow: hidden;text-overflow: ellipsis;height: 22px;">{$vo.name_en}{$vo.name_cn}</span>
+						<a style="text-decoration: none;color: #000;" href=""><span style="width: 75%;display: block;overflow: hidden;text-overflow: ellipsis;height: 22px;">{$vo.name_en}{$vo.name_cn}</span></a>
 						<span>{$k}</span>
 					</li>
 				{/volist}
