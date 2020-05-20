@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="__INDEX__/style/top_l.css"/>
+<script src="__INDEX__/style/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+    var __HOMEURL__ = "__ROOTURL__";
+</script>
+<!--头部-->
+<div class="top_l">
+    <div class="top_l_content">
+        <ul class="top_l_menu">
+            <li class="top_logo_l">
+                <a href="/">
+                    <img src="__INDEX__/images/indexLogo.png" alt="logo">
+                </a>
+            </li>
+            <li class="menu_item_l">
+                <a href="#">交易商</a>
+            </li>
+            <li class="menu_item_l">
+                <a href="#">代理商</a>
+            </li>
+            <li class="menu_item_l">
+                <a href="#">书城</a>
+            </li>
+            <li class="menu_item_l">
+                <a href="#">集市</a>
+            </li>
+            <li class="menu_item_l">
+                <a href="#">展会</a>
+            </li>
+            <li class="search_input_con">
+                <div class="shares_select_l">
+                    <span class="shares_select_title">交易商</span>
+                    <i class="icon1_l"></i>
+
+                    <div class="shares_select_option_con">
+                        <div class="code_option_item" name="1">交易商</div>
+                        <div class="code_option_item" name="2">代理商</div>
+                        <div class="code_option_item" name="3">新闻</div>
+                    </div>
+                </div>
+                <div class="search_key_con">
+                    <input type="text" class="search_input_text" placeholder="交易商有很多多"/>
+                    <i class="icon2_l"></i>
+                    <div class="key_result_list">
+                    </div>
+                </div>
+            </li>
+            <li class="user_login_l">
+                {if condition="session('userinfo') neq ''"}
+                <div class="login_status_2">
+                    <a href="#" class="msg_icon_link">
+                        <i class="top_msg_icon_l"></i>
+                        <span class="top_msg_number">5</span>
+                    </a>
+                    <a href="#">消息<i class="msg_detail_icon"></i></a>
+                    <a href="#" class="user_head_photo">
+                        <img src="{$Request.session.userinfo.head_img_url}" alt=""/>
+                    </a>
+                </div>
+                {else/}
+                <div class="login_status_1">
+                    <a class="login_btn_l" href="{:url('index/user/c_login')}">登录</a>
+                    <a class="register_btn_l" href="{:url('index/user/c_register')}">注册</a>
+                </div>
+                {/if}
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<!--头部js-->
+<script src="__INDEX__/style/top_l.js"></script>
