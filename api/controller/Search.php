@@ -57,6 +57,10 @@ class Search extends Common
                 // dump($datas);die;
 
             $res=$this->obj->get_more_search($data);
+			$arr = $res->toArray();
+			if($arr['current_page']>3){
+				$res=[];
+			}
 
         if ($res == null) {
             $this->returnMsg(400, '暂无数据！');

@@ -175,6 +175,9 @@ $(function(){
                             </a>`;
                         }
                     }
+					if(page==3){
+						$('.left_click_load_more').css('display', 'none')
+					}
                     if (data.data.last_page < page) {
                         if (page == 1) {
                             $('.left_click_load_more').hide();
