@@ -11,10 +11,10 @@
 		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 		<link rel="stylesheet" href="__INDEX__/style/layer.css" />
 		<link rel="stylesheet" type="text/css" href="__INDEX__/style/c_style.css" />
-		<script src="__INDEX__/style/layer.js"></script>
+
 		<link rel="stylesheet" type="text/css" href="__INDEX__/style/font_Icon/iconfont.css">
 		<link rel="stylesheet" type="text/css" href="__INDEX__/style/c_new_follows.css"/>
-		<link rel="stylesheet" type="text/css" href="__INDEX__/style/chat.css ">
+
 		<style>
 			[v-cloak] {
 				display: none;
@@ -155,39 +155,13 @@
 						 :src="item.img" alt="" v-cloak>{{item.title}}</a>
 				</div>
 				<div class="p_info_content">
-					<!-- <div class="hd c_row" style="border-bottom: none;">
+					<div class="hd c_row" style="border-bottom: none;">
 						<span class="c_row" style="font-size: 14px;color: #666;">
-							私信消息 <p class="c_news"><i class="c_sx_check" @click="sx_checked($event)"></i>只看未读消息</p>
+							选择投诉 <p class="c_news"><i class="c_sx_check" @click="sx_checked($event)"></i>只看已回复</p>
+							 <p class="c_news"><i class="c_sx_check" @click="sx_checked($event)"></i>只看已处理</p>
 						</span>
 					</div>
-					<div class="c_message_box c_row">
-						<div :id="'message_'+item.from_uid" class="c_msg_items c_row" @click="to_msg(item.from_uid,item.head_img_url,item.name)" v-cloak v-for="(item,idx) in show_list" :key="item.from_uid">
-							<div class="c_msg_tx">
-								<img :src="api_address+item.head_img_url">
-							</div>
-							<div class="c_msg_content">
-								<div class="c_row">
-									<p>与 <b>{{item.name}}</b> 的对话</p>
-									<p>{{item.addtime | formatDate}}</p>
-								</div>
-								<div>{{item.content}}</div>
-							</div>
-							<div class="c_msg_close">
-								<span @click="del_msg(item.from_uid,$event)">&nbsp;&nbsp;&nbsp;</span><br>
-								<div class="c_msg_num" v-if="item.status>1">未读</div>
-							</div>
-						</div>
 
-					</div>
-					
- 					<div id="">
-						<el-pagination
-								layout="prev, pager, next"
-								@current-change="handleCurrentChange"
-								:total= msg_count
-								:page-size= page_size>
-						</el-pagination>
-					</div> -->
 					
 					<div class="left_con_list" style="font-size: 0;"></div>
 					<div class="left_click_load_more">
@@ -236,10 +210,10 @@
 								title: '账号安全'
 							},
 							{
-								src: '/seller/propertylist/lst',
-								img: '__INDEX__/images/home1.png',
-								class: '',
-								title: '我的房源'
+								src: 'mycaselist.html',
+								img: '__INDEX__/images/home2.png',
+								class: 'c_aside_on',
+								title: '我的投诉'
 							},
 							{
 								src: 'c_person_follow.html',
@@ -255,8 +229,8 @@
 							},
 							{
 								src: 'c_person_messages.html',
-								img: '__INDEX__/images/message2.png',
-								class: 'c_aside_on',
+								img: '__INDEX__/images/message.png',
+								class: '',
 								title: '我的私信'
 							},
 							{
@@ -280,39 +254,6 @@
 						if (src != '') {
 							window.location.assign(src);
 						}
-					},
-					to_msg:function(id,head,name){
-						window.localStorage.setItem('f_id',id);
-						window.localStorage.setItem('f_head_img',api_address+head);
-						window.localStorage.setItem('f_name',name);
-						window.location.assign('msg_tools.html');
-					},
-					del_msg: function(id, events) {
-						var vm =this;
-						events.cancelBubble = true;
-
-						//删除localstorage中的聊天记录
-						// localStorage.removeItem('dialoglist_'+id);
-						// console.log('id', id);
-						$("#message_"+id).remove()
-						$.ajax({
-							url: api_address + '/api/messages/delmsg?from_uid=' + id,
-							type: 'get',
-							dataType: 'json',
-							success: function(data) {
-								Dialog.warn("提示", data.msg);
-								$('.mini-dialog-footer').css('height', '64px');
-								vm.page = 1;
-								vm.get_msg_count();
-								vm.get_msg_list();
-								setTimeout(function(){
-								window.location.reload();
-							}, 2000);
-							},
-							error: function(e) {
-								console.log(e);
-							}
-						});
 					},
 
 					handleCurrentChange(val) {
@@ -351,45 +292,7 @@
 						}
 
 					},
-					get_msg_count:function(){
-						var vm = this;
-						$.ajax({
-							url: api_address + '/api/messages/mymsgcount',
-							type: 'get',
-							dataType: 'json',
-							success: function(data) {
-								console.log(data);
-								if (data.code === 200) {
-									vm.msg_count = data.data.total;
-									vm.$forceUpdate();
-								}
-								// vm.msg_count = vm.msg_count;
-							},
-							error: function(e) {
-								console.log(e)
-							}
-						});
-					},
-					get_msg_list:function(){
-						var vm = this;
-						$.ajax({
-							url: api_address + '/api/messages/mymsglist/?page='+vm.page+'&page_size='+vm.page_size,
-							type: 'get',
-							dataType: 'json',
-							success: function(data) {
-								console.log(data);
-								if (data.code === 200) {
-									vm.msg_list = data.data;
-									vm.$forceUpdate();
-								}
-								vm.show_list = vm.msg_list;
-								console.log(vm.show_list)
-							},
-							error: function(e) {
-								console.log(e)
-							}
-						});
-					}
+
 				},
 				computed: {
 					no_readed: function() {
